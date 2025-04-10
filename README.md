@@ -27,6 +27,8 @@ This project requires Python >= 3.8. See the requirements.txt file for the requi
 pip install -r requirements.txt
 ```
 
+You can also run the project using anaconda for convenience.
+
 ## Training the Model
 Download the repository, and set the working directory to the root directory of the project. Run the following command to train the model:
 
