@@ -1,4 +1,5 @@
 <h1 align="center">Computer-Vision</h1>
+
 - [Model Structure](#structure)
 - [Training the Model](#training-the-model)
 - [Hyperparameter Searching and Visualization](#hyperparameter-searching-and-vis)
