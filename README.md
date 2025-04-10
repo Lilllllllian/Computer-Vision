@@ -1,5 +1,4 @@
 <h1 align="center">Computer-Vision</h1>
-<h3 align="center"> Huang Leyan 23307130460 </h3>
 
 ## Contents
 - [Contents](#contents)
