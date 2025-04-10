@@ -64,7 +64,7 @@ print(f"\nBest model saved as 'best_model.pkl' with val acc = {best_val_acc:.4f}
 The model will be saved in the current directory.
 
 ## Hyperparameter Searching and Visualization
-To search for the best hyperparameters and visualize the result, you can check the examples in the `data_and_test/cifar-10/param_and_plot.ipynb` file. Run the cells sequencially to get the results.
+To search for the best hyperparameters and visualize the result, you can check the examples in the `data_and_test/cifar-10/param_and_plot.ipynb` file. Run the cells sequencially to get the results. Or you can simply open the .html file to see my results.
 
 
 ## Loading and Testing the Model
