@@ -56,7 +56,7 @@ test_loss, test_acc = best_model.predict(test_images, test_labels)
 print(f"\nFinal Test Accuracy: {test_acc:.4f} | Loss: {test_loss:.4f}")
 ```
 
-To save the model, you can uncomment the last few lines of the `main.py` file:
+To save the model and its best parameters, you can uncomment the last few lines of the `main.py` file:
 
 ```python
 save_model(best_model, "best_model.pkl")
