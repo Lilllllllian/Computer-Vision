@@ -4,7 +4,7 @@
 - [Contents](#contents)
 - [File Description](#file-description)
 - [Requirements](#requirements)
-- [Model Structure](#structure)
+- [API reference](#API-reference)
 - [Training the Model](#training-the-model)
 - [Hyperparameter Searching and Visualization](#hyperparameter-searching-and-vis)
 - [Loading and Testing](#loading-and-testing)
@@ -28,6 +28,9 @@ pip install -r requirements.txt
 ```
 
 You can also run the project using anaconda for convenience.
+
+## API reference
+```src.NeuralNetwork(self, input_shape, layer_list, lr, l2_reg=0, loss='softmax'):```
 
 ## Training the Model
 Download the repository, and set the working directory to the root directory of the project. Run the following command to train the model:
