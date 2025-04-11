@@ -31,6 +31,17 @@ You can also run the project using anaconda for convenience.
 
 ## API reference
 ```src.NeuralNetwork(self, input_shape, layer_list, lr, l2_reg=0, loss='softmax'):```
+Type of different layers:
+```
+# type fc, output
+src.NeuralLayer(input_size, k, f=3, s=1, p=1, u_type='adam', a_type='relu', dropout=1)
+
+# type pool
+src.PoolLayer(input_size, f=2, s=2, method='max', dropout=1):
+
+# type conv
+src.ConvLayer(input_size, k, f=3, s=1, p=1, u_type='adam', a_type='relu', dropout=1)
+```
 
 ## Training the Model
 Download the repository, and set the working directory to the root directory of the project. Run the following command to train the model:
