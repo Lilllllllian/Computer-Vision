@@ -30,11 +30,11 @@ pip install -r requirements.txt
 You can also run the project using anaconda for convenience.
 
 ## API reference
-```src.NeuralNetwork(self, input_shape, layer_list, lr, l2_reg=0, loss='softmax'):```
-Type of different layers:
+```src.NeuralNetwork(self, input_shape, layer_list, lr, l2_reg=0, loss='softmax')```
+Types of different layers:
 ```
-# type fc, output
-src.NeuralLayer(input_size, k, f=3, s=1, p=1, u_type='adam', a_type='relu', dropout=1)
+# type fully-connected, output
+src.LinearLayer(input_size, k, f=3, s=1, p=1, u_type='adam', a_type='relu', dropout=1)
 
 # type pool
 src.PoolLayer(input_size, f=2, s=2, method='max', dropout=1):
