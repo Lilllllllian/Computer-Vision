@@ -44,7 +44,7 @@ test_labels = test_data['labels']
 
 # ---------- 模型超参数 ----------
 lr = 1e-4
-l2_reg = 8e-6
+l2_reg = 1e-5
 decay = 0.96
 batch_size = 1
 num_epochs = 20 #之后loss开始回升
