@@ -12,7 +12,7 @@
 ***
 
 ## File Description
-- data_and_test: Contains CIFAR-10 dataset. You can also download the dataset from [here](https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz) , also contains the .ipynb file you need for training and testing.
+- data_and_test: Contains CIFAR-10 dataset. You can also download the dataset from [here](https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz) , also contains the .ipynb file you need for training and testing and the result and report.
 - model: Contains the best model parameters and itself.
 - vis: Contains the visualization of the training process and some other figures.
 - src: Contains the source code.
@@ -57,7 +57,7 @@ To change the hyperparameters, you can modify the `main.py` file directly:
 
 ```python
 lr = 1e-4
-l2_reg = 8e-6
+l2_reg = 1e-5
 decay = 0.96
 batch_size = 1
 num_epochs = 20
