@@ -6,7 +6,7 @@ import src.utils as u
 
 class LinearLayer(Layer):
     '''
-    线性层，即全连接层
+    线性层，全连接层或output层
     '''
     def __init__(self, input_size, k, u_type='adam', a_type='relu', dropout=1):
         self.neurons = []
@@ -25,12 +25,8 @@ class LinearLayer(Layer):
 
             if u_type == 'adam':
                 n.m, n.v = 0, 0
-            elif u_type == 'm':
-                n.v = 0, 0
             elif u_type == 'nag':
                 n.v, n.v_prev = 0, 0
-            elif u_type == 'rmsprop':
-                n.cache, n.v = 0, 0
 
             self.neurons.append(n)
 
@@ -104,11 +100,7 @@ class LinearLayer(Layer):
     def update(self, lr, l2_reg, t=0):
         if self.u_type == 'adam':
             u.adam_update(self.neurons, lr, t=t, l2_reg=l2_reg)
-        elif self.u_type == 'rmsprop':
-            u.rmsprop(self.neurons, lr, l2_reg=l2_reg)
         elif self.u_type == 'm':
             u.momentum_update(self.neurons, lr, l2_reg=l2_reg)
         elif self.u_type == 'nag':
             u.nag_update(self.neurons, lr, l2_reg=l2_reg)
-        elif self.u_type == 'v':
-            u.vanila_update(self.neurons, lr, l2_reg=l2_reg)

@@ -24,22 +24,6 @@ def softmax_loss(x, y):
     dx /= N
     return loss, dx
 
-
-def logistic_loss(x, y):
-    """
-        计算 Logistic损失函数及其梯度
-        输入：
-            x: 模型的输出，形状为 (N, C)
-            y: 真实标签，形状为 (N,)
-        输出：
-            loss: Logistic 损失值
-            dx: 损失函数对输入 x 的梯度
-    """
-    N = x.shape[0]
-    loss = np.sum(np.square(y - x) / 2) / N
-    dx = -(y - x)
-    return loss, dx.T
-
 #-------------卷积层相关操作--------------------
 def get_im2col_indices(x_shape, field_height, field_width, padding=1, stride=1):
     """
@@ -124,24 +108,6 @@ def col2im_indices(cols, x_shape, field_height=3, field_width=3, padding=1, stri
     return x_padded[:, :, padding:-padding, padding:-padding]
 
 #-----------更新神经元权重-----------------------
-def rmsprop(neurons, lr, l2_reg=0, decay_rate=0.9, eps=1e-8):
-    """
-        使用 RMSProp 优化算法更新神经元权重
-        输入：
-            neurons: 神经元
-            lr: 学习率
-            l2_reg: L2 正则化系数
-            decay_rate: 衰减率
-            eps: 防止除零的小扰动
-        """
-    for n in neurons:
-        l2 = l2_reg * n.weights
-        dx = (n.last_input.dot(n.grad_z)).T + l2
-        d_bias = np.sum(n.grad_z)
-
-        n.cache = decay_rate * n.cache + (1 - decay_rate) * (dx ** 2)
-        n.weights += - lr * dx / (np.sqrt(n.cache) + eps)
-        n.bias -= lr * d_bias
 
 def adam_update(neurons, lr, t, l2_reg=0, beta1=np.float32(0.9), beta2=np.float32(0.999), eps=1e-8):
     """
@@ -191,44 +157,6 @@ def nag_update(neurons, lr, l2_reg=0, mu=np.float32(0.9)):
         n.bias -= lr * d_bias
 
 
-def momentum_update(neurons, lr, l2_reg=0, mu=np.float32(0.9)):
-    """
-        使用 Momentum 优化算法更新神经元权重
-        输入：
-            neurons: 神经元
-            lr: 学习率
-            l2_reg: L2 正则化系数
-            mu: 动量系数
-    """
-    for n in neurons:
-        l2 = l2_reg * n.weights
-        dx = (n.last_input.dot(n.grad_z)).T + l2
-        d_bias = np.sum(n.grad_z)
-
-        # 更新速度（考虑动量和梯度）
-        n.v = mu * n.v - lr * dx
-        n.weights += n.v
-
-        # 更新偏置的速度
-        n.v_bias = mu * n.v_bias - lr * d_bias
-        n.bias += n.v_bias
-
-
-def vanila_update(neurons, lr, l2_reg=0):
-    """
-        使用 Vanilla Gradient Descent 优化算法更新神经元权重
-        输入：
-            neurons: 神经元
-            lr: 学习率
-            l2_reg: L2 正则化系数
-    """
-    for n in neurons:
-        l2 = l2_reg * n.weights
-        dx = (n.last_input.dot(n.grad_z)).T + l2
-        d_bias = np.sum(n.grad_z)
-
-        n.weights -= lr * dx + l2
-        n.bias -= lr * d_bias
 
 #---------激活函数及其导数-----------------
 def sigmoid(input):
