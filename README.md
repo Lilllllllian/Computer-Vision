@@ -1,5 +1,4 @@
 <h1 align="center">计算机视觉期中作业</h1>
-<h3 align="center"> 黄乐妍 23307130460</h3>
 
 ## Contents
 - [Contents](#contents)
