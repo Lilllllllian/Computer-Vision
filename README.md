@@ -1,4 +1,22 @@
-# 项目概述
+<h1 align="center">计算机视觉期中作业</h1>
+<h3 align="center"> 黄乐妍 23307130460</h3>
+
+## Contents
+- [Contents](#contents)
+- [Requirements](#requirements)
+- [Report](#report)
+- [Environment](#environment)
+- [任务一：Caltech-101图像分类](#task-1)
+  - [项目背景与目标](#a)
+  - [方法与步骤](#b)
+  - [操作说明](#c)
+  - [代码与模型权重](#d)
+- [任务二：VOC数据集上的目标检测](#task-2)
+  - [项目背景与目标](#a1)
+  - [方法与步骤](#b1)
+  - [操作说明](#c1)
+  - [代码与模型权重](#d1)
+
 ## Requirements
 本项目需要 Python >= 3.8。所需的包详见 requirements.txt 文件。可以使用以下命令安装它们：
 ```
@@ -8,7 +26,7 @@ pip install -r requirements.txt
 ## Report
 - `Computer_Vision_Midterm.pdf`：完整的实验报告。
 
-## 环境配置
+## Environment
 
 - **Software Environment**
   - PyTorch 2.1.0
@@ -46,10 +64,6 @@ Caltech-101数据集是一个广泛用于图像分类任务的数据集，包含
 - `TASK1_pipeline.ipynb`：包含数据处理、超参数调优、训练、测试模型的完整流程。直接克隆仓库到本地后即可运行（注意：由于项目一在 Kaggle 上运行，实际运行时可能需要调整路径）。
 - `save-best-model.ipynb`：保存模型相关操作。
 - `plot_results.ipynb`：可视化训练过程相关操作。
-
-### 实验结果与结论
-
-通过微调预训练的ResNet-18模型，在Caltech-101数据集上取得了显著的分类效果提升。与随机初始化模型相比，预训练模型在验证集和测试集上均表现出更高的准确率和更低的损失，验证了迁移学习的有效性。
 
 ### 代码与模型权重
 
